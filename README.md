@@ -12,3 +12,15 @@ sbt run
 cd elixir
 mix run
 ```
+
+[Day 3](https://github.com/MancunianSam/advent-of-code-2021/tree/main/rust) (Rust)
+```
+cd rust
+cargo run
+```
+
+[Day 4](https://github.com/MancunianSam/advent-of-code-2021/tree/main/go) (Go)
+```
+cd go
+go run .
+```
