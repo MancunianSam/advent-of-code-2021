@@ -24,3 +24,9 @@ cargo run
 cd go
 go run .
 ```
+
+[Day 5](https://github.com/MancunianSam/advent-of-code-2021/tree/main/ruby) (Go)
+```
+cd ruby 
+ruby ruby.rb
+```
