@@ -25,7 +25,7 @@ cd go
 go run .
 ```
 
-[Day 5](https://github.com/MancunianSam/advent-of-code-2021/tree/main/ruby) (Go)
+[Day 5](https://github.com/MancunianSam/advent-of-code-2021/tree/main/ruby) (Ruby)
 ```
 cd ruby 
 ruby ruby.rb
