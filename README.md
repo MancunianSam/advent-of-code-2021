@@ -30,3 +30,12 @@ go run .
 cd ruby 
 ruby ruby.rb
 ```
+
+[Day 6](https://github.com/MancunianSam/advent-of-code-2021/tree/main/c) (C)
+```
+cd c
+gcc main.c -o main.out
+./main.out
+```
+
+The solution for part two will also work for part one but I've left the original solution for part one in, even though it won't work for the second part.
