@@ -46,3 +46,9 @@ cd c++
 g++ main.cpp -o main.out
 ./main.out
 ```
+
+[Day 8](https://github.com/MancunianSam/advent-of-code-2021/tree/main/php) (PHP)
+```
+cd php
+php day8.php
+```
