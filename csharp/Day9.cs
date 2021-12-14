@@ -8,7 +8,7 @@ List<int> GetPositions(int value, int maxValue)
     return retVal.FindAll(pos => pos >= 0 && pos < maxValue);
 }
 
-var text = File.ReadAllText("/home/sam/repositories/advent-of-code-2021/c#/input.txt");
+var text = File.ReadAllText("/home/sam/repositories/advent-of-code-2021/csharp/input.txt");
 var inputArr = text.Split("\n");
 var inputList = inputArr.ToList().Select(el => el.ToCharArray().Select(c => int.Parse(c.ToString())).ToList()).ToList();
 var inputCount = inputList.Count;
@@ -16,7 +16,7 @@ var innerCount = inputList[0].Count;
 var sum = 0;
 var sizeList = new List<int>();
 
-List<(int First, int Second)> GetCoordinates(int x, int y)
+List<(int X, int Y)> GetCoordinates(int x, int y)
 {
     var xPositions = GetPositions(x, innerCount);
     var yPositions = GetPositions(y, inputCount);
@@ -26,14 +26,14 @@ List<(int First, int Second)> GetCoordinates(int x, int y)
     return coordinates;
 }
 
-List<(int First, int Second)> GetBasin(List<(int X, int Y)> pointsToCheck, List<(int First, int Second)> checkedPoints)
+List<(int X, int Y)> GetBasin(List<(int X, int Y)> pointsToCheck, List<(int X, int Y)> checkedPoints)
 {
     var filteredPoints = pointsToCheck.FindAll(
         point => 
             inputList[point.Y][point.X] != 9 && !checkedPoints.Contains(point));
     if (filteredPoints.Count == 0) return checkedPoints;
     {
-        var newPoints = new List<(int First, int Second)>();
+        var newPoints = new List<(int X, int Y)>();
         filteredPoints.ForEach(point => newPoints.AddRange(GetCoordinates(point.X, point.Y)));
         checkedPoints.AddRange(filteredPoints);
         return GetBasin(newPoints.Distinct().ToList(), checkedPoints);
@@ -46,12 +46,12 @@ for (var y = 0; y < inputCount; y++)
     {
         var currentValue = inputList[y][x];
         var coordinates = GetCoordinates(x, y);
-        var coordinateValues = coordinates.Select(c => inputList[c.Second][c.First]).ToList();
+        var coordinateValues = coordinates.Select(c => inputList[c.Y][c.X]).ToList();
         var lowerCount = coordinateValues.FindAll(each => each <= currentValue).Count;
         if (lowerCount == 0)
         {
             // Console.WriteLine("({0}, {1}) {2}", x, y, currentValue);
-            var basin = GetBasin(coordinates, new List<(int First, int Second)>{(x, y)});
+            var basin = GetBasin(coordinates, new List<(int X, int Y)>{(x, y)});
             sizeList.Add(basin.Count);
             sum = sum + 1 + currentValue;
         }
