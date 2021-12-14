@@ -59,3 +59,9 @@ php day8.php
 cd csharp
 dotnet run Day9.cs
 ```
+
+[Day 10](https://github.com/MancunianSam/advent-of-code-2021/tree/main/fsharp) (F#)
+```
+cd fsharp
+dotnet run Day10.fs
+```
