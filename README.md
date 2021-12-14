@@ -52,3 +52,10 @@ g++ main.cpp -o main.out
 cd php
 php day8.php
 ```
+
+
+[Day 9](https://github.com/MancunianSam/advent-of-code-2021/tree/main/csharp) (C#)
+```
+cd csharp
+dotnet run Day9.cs
+```
