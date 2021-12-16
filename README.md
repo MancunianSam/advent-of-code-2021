@@ -65,3 +65,9 @@ dotnet run Day9.cs
 cd fsharp
 dotnet run Day10.fs
 ```
+
+[Day 11](https://github.com/MancunianSam/advent-of-code-2021/tree/main/julia) (Julia)
+```
+cd julia 
+julia src/day11.jl
+```
